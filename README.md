@@ -13,12 +13,12 @@ Antes de comenzar, asegúrate de tener instalado:
 
 1. Clona el repositorio:
 ```bash
-git clone git@github.com:ezqdev/courses-app.git
+git clone git@github.com:ezqdev/projects-app.git
 ```
 
 2. Navega al directorio del proyecto:
 ```bash
-cd courses-app
+cd projects-app
 ```
 
 3. Instala las dependencias:
