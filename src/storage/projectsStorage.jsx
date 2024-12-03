@@ -66,7 +66,6 @@ export const projectsStorage = {
             const newProject = {
                 ...projectData,
                 file: fileData,
-                status: 'IN_PROGRESS',
                 id: projects.length,
             };
 

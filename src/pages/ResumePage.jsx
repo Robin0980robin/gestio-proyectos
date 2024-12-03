@@ -11,7 +11,6 @@ const ResumePage = () => {
     const currentUser = useAuthStore(state => state.currentUser)
     const user = usersStorage.getUsers().find((u) => u.id === currentUser.id)
     const navigate = useNavigate()
-    const [refresh, setRefresh] = useState(false)
 
     useEffect(() => {
         if (currentUser.isTeacher) {
@@ -21,32 +20,6 @@ const ResumePage = () => {
 
     console.log('current user', user)
 
-    const handleFinish = (courseId) => {
-        const courseInUserIndex = user.courses.findIndex((c) => c.id === courseId)
-        if (courseInUserIndex !== -1) {
-            user.courses[courseInUserIndex] = {
-                ...user.courses[courseInUserIndex],
-                isFinished: true
-            }
-            usersStorage.updateUser(user.id, user)
-            setRefresh(true)
-            setTimeout(() => {
-                setRefresh(false)
-            }, 2000)
-        }
-    }
-
-    const isFinished = (courseId) => {
-        const courseInUserIndex = user.courses.findIndex((c) => c.id === courseId)
-        if (courseInUserIndex !== -1) {
-            return user.courses[courseInUserIndex].isFinished
-        }
-    }
-
-
-    const handleCourseClick = (courseId) => {
-        navigate(`/course/${courseId}`);
-    };
 
     const projects = projectsStorage.getProjects()
     const projectsByCurrentUser = projects.length === 0 ? [] : projects.filter((project) => project.userId === currentUser.id)
