@@ -16,8 +16,8 @@ const ResumePage = () => {
     const [refresh, setRefresh] = useState(false)
 
     useEffect(() => {
-        if (currentUser.isAdmin) {
-            navigate("/admin")
+        if (currentUser.isTeacher) {
+            navigate("/projects")
         }
     }, [currentUser])
 
@@ -76,7 +76,7 @@ const ResumePage = () => {
                             </Card>
                         </Col>
                         <Col span={8}>
-                            <Card title={<Typography.Title>Comentarios</Typography.Title>} bordered={false}>
+                            <Card  onClick={() => navigate("/my-projects")} hoverable={true} title={<Typography.Title>Comentarios</Typography.Title>} bordered={false}>
                                 <Typography.Paragraph style={{ fontSize: 20 }} >
                                     Tienes comentarios en tus proyectos <a>Detalles</a>
                                 </Typography.Paragraph>

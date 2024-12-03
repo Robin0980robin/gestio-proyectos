@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import firstPerson from '../assets/imagen1.png'
 import secondPerson from '../assets/imagen2.png'
 import thirdPerson from '../assets/imagen3.png'
+import teachersData from '../data/teachers.json'
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -17,23 +18,15 @@ const HomePage = () => {
 
   useEffect(() => {
     const users = usersStorage.getUsers()
-    const adminData = {
-      name: "ADMIN",
-      email: "admin@mail.com",
-      password: "pruebas123",
-      isAdmin: true,
-      isCustomer: false,
-      isTeacher: false
+    const teachers = users.filter(user => user.isTeacher)
+    console.log('teachers', teachers)
+    if (teachers.length === 0){
+      console.log('teachers empty')
+      teachersData.teachers.forEach(teacher => {
+        console.log('teacher', teacher)
+        usersStorage.saveUser(teacher)
+      });
     }
-    if (users.lenght === 0) {
-      usersStorage.saveUser(adminData)
-    } else {
-      const admin = users.find((user) => user.isAdmin)
-      if (!admin) {
-        usersStorage.saveUser(adminData)
-      }
-    }
-
   }, [])
 
   return (

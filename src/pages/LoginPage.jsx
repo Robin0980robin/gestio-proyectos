@@ -4,7 +4,6 @@ import { usersStorage } from "../storage/usersStorage"
 import useAuthStore from "../stores/authStore"
 import { useNavigate } from "react-router-dom"
 import Header from "../components/Header"
-
 const LoginPage = () => {
     const login = useAuthStore(state => state.login)
     const navigate = useNavigate()

@@ -12,7 +12,7 @@ const RegisterPage = () => {
     const handleSubmit = (values) => {
         const fullValues = {
             ...values,
-            isCustomer: true
+            isStudent: true
         }
         const createUserResult = usersStorage.saveUser(fullValues)
         if (createUserResult.status) {

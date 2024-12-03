@@ -1,0 +1,11 @@
+{
+    "teachers": [
+      {
+        "name": "Ing Francisco Orellana",
+        "email": "ingeniero@mail.com",
+        "password": "Pruebas123$",
+        "isTeacher": true,
+        "isStudent": false
+      }
+    ]
+   }

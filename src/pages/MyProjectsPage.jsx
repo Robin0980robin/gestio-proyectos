@@ -1,4 +1,4 @@
-import { Button, Card, Form, Input, Layout, List, message, Modal, Row, Select, Tag, Typography, Upload } from "antd"
+import { Button, Card, Col, Form, Input, Layout, List, message, Modal, Row, Select, Tag, Typography, Upload } from "antd"
 import { useEffect, useState } from "react"
 import { projectsStorage } from "../storage/projectsStorage"
 import useAuthStore from "../stores/authStore"
@@ -21,7 +21,7 @@ function MyProjectsPage() {
 
     async function handleFinish(values) {
         console.log('values', values)
-        const file = values.file.length >0 ? values.file[0].originFileObj : null;
+        const file = values.file.length > 0 ? values.file[0].originFileObj : null;
         if (selectedProject) {
             const updateProject = await projectsStorage.updateProject(selectedProject.id, {
                 ...values,
@@ -113,17 +113,43 @@ function MyProjectsPage() {
                         bordered
                         dataSource={projectsByCurrentUser}
                         renderItem={project => (
-                            <List.Item actions={[
-                                <a onClick={() => handlePreview(project.id)} key="list-loadmore-edit">Ver adjunto</a>,
-                                <a onClick={() => handleEditModal(project)} key="list-loadmore-edit">Editar</a>,
-                                <a onClick={() => handleDeleteProject(project)} key="list-loadmore-edit">Eliminar</a>
-                            ]}>
-                                {project.name} {" "}
-                                {project.status === "IN_PROGRESS" ? (
-                                    <Tag color="processing">En Progreso</Tag>
-                                ) : (
-                                    <Tag color="success">Finalizado</Tag>
-                                )}
+                            <List.Item>
+                                <Row  style={{ width: '80%'}}>
+                                    <Col span={8}>
+                                        <div>
+                                            Nombre: {project.name}
+                                        </div>
+                                        Estado: {project.status === "IN_PROGRESS" ? (
+                                            <Tag color="processing">En Progreso</Tag>
+                                        ) : (
+                                            <Tag color="success">Finalizado</Tag>
+                                        )}
+                                        <div>
+                                            ¿Avances aprobados?: {'checked' in project && project.checked ? 'Sí' : 'No'}
+                                        </div>
+                                    </Col>
+                                    <Col span={8}>
+                                        {'comments' in project && (
+                                            <div>
+                                                Comentarios:
+                                                {project.comments.length > 0 &&
+                                                    project.comments.map((c) =>
+                                                        <p>{c.author.name}: {c.content}</p>
+                                                    )
+                                                }
+                                            </div>
+                                        )}
+                                    </Col>
+                                    <Col span={8}>
+                                        <a style={{ display: 'block'}} onClick={() => handlePreview(project.id)} key="list-loadmore-edit">Ver adjunto</a>
+                                        <a style={{ display: 'block'}} onClick={() => handleEditModal(project)} key="list-loadmore-edit">Editar</a>
+                                        <a style={{ display: 'block'}} onClick={() => handleDeleteProject(project)} key="list-loadmore-edit">Eliminar</a>
+                                    </Col>
+                                </Row>
+
+
+
+
                             </List.Item>)}
 
                     />
@@ -173,28 +199,28 @@ function MyProjectsPage() {
 
 
                 <Modal
-                open={previewOpen}
-                title="Vista previa del archivo"
-                footer={null}
-                onCancel={() => setPreviewOpen(false)}
-                width={800}
-            >
-                {previewFile && (
-                    previewFile.startsWith('data:image') ? (
-                        <img
-                            alt="preview"
-                            style={{ width: '100%' }}
-                            src={previewFile}
-                        />
-                    ) : (
-                        <iframe
-                            src={previewFile}
-                            style={{ width: '100%', height: '500px' }}
-                            title="preview"
-                        />
-                    )
-                )}
-            </Modal>
+                    open={previewOpen}
+                    title="Vista previa del archivo"
+                    footer={null}
+                    onCancel={() => setPreviewOpen(false)}
+                    width={800}
+                >
+                    {previewFile && (
+                        previewFile.startsWith('data:image') ? (
+                            <img
+                                alt="preview"
+                                style={{ width: '100%' }}
+                                src={previewFile}
+                            />
+                        ) : (
+                            <iframe
+                                src={previewFile}
+                                style={{ width: '100%', height: '500px' }}
+                                title="preview"
+                            />
+                        )
+                    )}
+                </Modal>
 
             </Card>
         </Layout>

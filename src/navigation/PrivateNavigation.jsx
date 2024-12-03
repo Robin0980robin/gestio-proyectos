@@ -8,6 +8,7 @@ import AdminPage from "../pages/AdminPage"
 import { useEffect } from "react"
 import ResumePage from "../pages/ResumePage"
 import MyProjectsPage from "../pages/MyProjectsPage"
+import ProjectsPage from "../pages/ProjectsPage"
 
 const PrivateNavigation = () => {
     const currentUser = useAuthStore(state => state.currentUser)
@@ -16,10 +17,9 @@ const PrivateNavigation = () => {
         <Routes>
           <Route path="/" element={<ResumePage />} />
           <Route path="/my-projects" element={<MyProjectsPage />} />
-          <Route path="/course/:courseId" element={<CourseDetailPage />} />
           <Route path="/my-profile" element={<ProfilePage />} />
-          {currentUser.isAdmin && (
-            <Route path="/admin" element={<AdminPage />} />
+          {currentUser.isTeacher && (
+            <Route path="/projects" element={<ProjectsPage />} />
           )}
         </Routes>
       </BrowserRouter>
