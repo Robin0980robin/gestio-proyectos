@@ -1,0 +1,110 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "category_id": 1,
+            "title": "HTML y CSS desde cero",
+            "description": "Aprende los fundamentos del desarrollo web front-end",
+            "longDescription": "En este curso completo de HTML y CSS aprenderás desde los conceptos básicos hasta técnicas avanzadas de diseño web. Crearás sitios web responsive, aprenderás Flexbox, Grid, animaciones CSS y las mejores prácticas de la industria.",
+            "duration": "20 horas",
+            "level": "Principiante",
+            "price": 49.99,
+            "students": 1234,
+            "image": "html-css.jpg",
+            "instructor": {
+                "name": "Ana García",
+                "title": "Senior Frontend Developer",
+                "bio": "10 años de experiencia en desarrollo web. Especialista en CSS y diseño responsive.",
+                "image": "instructor1.jpg"
+            },
+            "rating": {
+                "average": 4.8,
+                "totalReviews": 342
+            },
+            "syllabus": [
+                {
+                    "title": "Introducción a HTML",
+                    "lessons": [
+                        "Estructura básica",
+                        "Tags principales",
+                        "Semántica HTML5"
+                    ]
+                },
+                {
+                    "title": "Fundamentos de CSS",
+                    "lessons": [
+                        "Selectores",
+                        "Box Model",
+                        "Flexbox y Grid"
+                    ]
+                }
+            ],
+            "requirements": [
+                "No se requiere experiencia previa en programación",
+                "Computadora con editor de texto",
+                "Conexión a internet"
+            ],
+            "whatYouWillLearn": [
+                "Crear sitios web desde cero",
+                "Diseño responsive",
+                "Mejores prácticas de HTML y CSS",
+                "Técnicas modernas de diseño web"
+            ]
+        },
+        {
+            "id": 2,
+            "category_id": 1,
+            "title": "JavaScript Moderno",
+            "description": "Domina JavaScript ES6+ y sus características avanzadas",
+            "duration": "30 horas",
+            "level": "Intermedio",
+            "price": 69.99,
+            "students": 892,
+            "image": "javascript.jpg"
+        },
+        {
+            "id": 3,
+            "category_id": 1,
+            "title": "React Avanzado",
+            "description": "Construye aplicaciones web modernas con React",
+            "duration": "40 horas",
+            "level": "Avanzado",
+            "price": 89.99,
+            "students": 753,
+            "image": "react.jpg"
+        },
+        {
+            "id": 4,
+            "category_id": 2,
+            "title": "Python para Data Science",
+            "description": "Introducción a la ciencia de datos con Python",
+            "duration": "25 horas",
+            "level": "Principiante",
+            "price": 59.99,
+            "students": 756,
+            "image": "python-ds.jpg"
+        },
+        {
+            "id": 5,
+            "category_id": 2,
+            "title": "Machine Learning Básico",
+            "description": "Fundamentos de machine learning con scikit-learn",
+            "duration": "35 horas",
+            "level": "Intermedio",
+            "price": 79.99,
+            "students": 432,
+            "image": "ml.jpg"
+        },
+        {
+            "id": 6,
+            "category_id": 3,
+            "title": "Fundamentos de UX",
+            "description": "Aprende los principios básicos del diseño de experiencia de usuario",
+            "duration": "15 horas",
+            "level": "Principiante",
+            "price": 39.99,
+            "students": 543,
+            "image": "ux-basics.jpg"
+        }
+    ]
+}

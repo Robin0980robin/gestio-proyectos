@@ -1,0 +1,44 @@
+/* Estilos para el Dashboard*/
+.dashboard {
+    margin: 50px 20px;
+    text-align: center;
+  }
+
+  .dashboard h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%;
+    margin: 10px;
+    text-align: left;
+  }
+
+  .section h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+  }
+
+  .section p {
+    font-size: 1.1em;
+  }
+
+  .section a {
+    color: #004680;
+    text-decoration: none;
+  }
+
+  .section a:hover {
+    text-decoration: underline;
+  }
