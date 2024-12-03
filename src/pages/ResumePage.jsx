@@ -4,8 +4,6 @@ import useAuthStore from "../stores/authStore"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { usersStorage } from "../storage/usersStorage"
-import { PDFDownloadLink } from "@react-pdf/renderer"
-import Cerificate from "../components/Certificate"
 import { projectsStorage } from "../storage/projectsStorage"
 
 const ResumePage = () => {

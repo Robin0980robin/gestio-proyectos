@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
 import { Layout, Typography } from 'antd';
-import Footer from '../components/Footer';
 import { usersStorage } from '../storage/usersStorage';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
-import firstPerson from '../assets/imagen1.png'
-import secondPerson from '../assets/imagen2.png'
-import thirdPerson from '../assets/imagen3.png'
 import teachersData from '../data/teachers.json'
 
 const { Content } = Layout;

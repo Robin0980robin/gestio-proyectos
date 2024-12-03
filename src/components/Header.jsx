@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom"
-import logo from "../assets/logo.png"
 import '../styles/home.css'
 import useAuthStore from "../stores/authStore"
 

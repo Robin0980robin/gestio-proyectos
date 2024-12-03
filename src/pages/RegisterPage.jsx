@@ -1,5 +1,4 @@
 import { Button, Card, Form, Input, Layout, message, Row } from "antd"
-import Navbar from "../components/Navbar"
 import { usersStorage } from "../storage/usersStorage"
 import useAuthStore from "../stores/authStore"
 import { useNavigate } from "react-router-dom"
